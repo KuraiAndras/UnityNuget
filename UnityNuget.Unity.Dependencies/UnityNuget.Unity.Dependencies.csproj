@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net471</TargetFramework>
+    <LangVersion>7.3</LangVersion>
+    <PackageId>UnityNuget.Unity.Dependencies</PackageId>
+    <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\LICENSE.md" Pack="true" PackagePath="$(PackageLicenseFile)" />
+  </ItemGroup>
+
+</Project>
