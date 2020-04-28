@@ -1,9 +1,6 @@
 {
-    "name": "UnityNuget.Unity",
-    "references": [
-        "UnityNuget.Shared",
-        "UnityNuget.Unity.Dependencies"
-    ],
+    "name": "UnityNuget.Unity.Dependencies",
+    "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
