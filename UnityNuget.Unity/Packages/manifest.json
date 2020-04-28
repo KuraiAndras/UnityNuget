@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "com.unitynuget.shared": "file:../../UnityNuget.Shared",
+    "com.unitynuget.unity.dependencies": "file:../../UnityNuget.Unity.Dependencies/bin/Dependencies",
     "com.unity.collab-proxy": "1.2.16",
     "com.unity.ide.rider": "1.1.4",
     "com.unity.ide.vscode": "1.1.4",

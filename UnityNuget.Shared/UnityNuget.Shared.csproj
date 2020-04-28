@@ -1,31 +1,35 @@
 <Project>
   <!-- set output paths -->
-    <PropertyGroup>
-      <BaseIntermediateOutputPath>.obj\</BaseIntermediateOutputPath>
-      <BaseOutputPath>.bin\</BaseOutputPath>
-    </PropertyGroup>
-  
+  <PropertyGroup>
+    <BaseIntermediateOutputPath>.obj\</BaseIntermediateOutputPath>
+    <BaseOutputPath>.bin\</BaseOutputPath>
+  </PropertyGroup>
+
   <!-- this is needed -->
-    <Import Sdk="Microsoft.NET.Sdk" Project="Sdk.props" />
-  
-    <PropertyGroup>
-      <TargetFramework>netstandard2.0</TargetFramework>
-      <LangVersion>7.3</LangVersion>
-      <IsPackable>true</IsPackable>
-      <PackageId>UnityNuget.Shared</PackageId>
-      <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
-    </PropertyGroup>
-  
+  <Import Sdk="Microsoft.NET.Sdk" Project="Sdk.props" />
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <LangVersion>7.3</LangVersion>
+    <IsPackable>true</IsPackable>
+    <PackageId>UnityNuget.Shared</PackageId>
+    <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
+  </PropertyGroup>
+
   <!-- ignore meta files in the project -->
-    <ItemGroup>
-      <None Remove="**/**/*.meta" />
-    </ItemGroup>
-  
-    <ItemGroup>
-      <None Include="../LICENSE.md" Pack="true" PackagePath="$(PackageLicenseFile)" />
-    </ItemGroup>
-  
+  <ItemGroup>
+    <None Remove="**/**/*.meta" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="../LICENSE.md" Pack="true" PackagePath="$(PackageLicenseFile)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="3.1.3" />
+  </ItemGroup>
+
   <!-- this is needed -->
-    <Import Sdk="Microsoft.NET.Sdk" Project="Sdk.targets" />
-  
-  </Project>
+  <Import Sdk="Microsoft.NET.Sdk" Project="Sdk.targets" />
+
+</Project>

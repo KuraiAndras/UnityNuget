@@ -11,4 +11,32 @@
     <None Include="..\LICENSE.md" Pack="true" PackagePath="$(PackageLicenseFile)" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\UnityNuget.Shared\UnityNuget.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="*.meta" />
+    <None Update="package.json" CopyToOutputDirectory="PreserveNewest" />
+    <None Update="UnityNuget.Unity.Dependencies.asmdef" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <NugetDlls Include="./NugetDlls/**/*.dll" />
+    <AllOutDirFiles Include="$(OutDir)/**/*" />
+    <DependenciesFolder Include="$(OutDir)/../../Dependencies" />
+  </ItemGroup>
+
+  <Target Name="Remove Dll" AfterTargets="AfterBuild">
+    <Delete Files="$(OutDir)/UnityNuget.Unity.Dependencies.dll" />
+    <Delete Files="$(OutDir)/UnityNuget.Unity.Dependencies.pdb" />
+    <Delete Files="$(OutDir)/UnityNuget.Shared.dll" />
+    <Delete Files="$(OutDir)/UnityNuget.Shared.pdb" />
+
+    <Copy SourceFiles="@(NugetDlls)" DestinationFolder="$(OutDir)/%(RecursiveDir)" />
+
+    <RemoveDir Directories="@(DependenciesFolder)" />
+    <Copy SourceFiles="@(AllOutDirFiles)" DestinationFolder="@(DependenciesFolder)" />
+  </Target>
+
 </Project>
