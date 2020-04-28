@@ -1,0 +1,16 @@
+{
+    "name": "UnityNuget.Unity",
+    "references": [
+        "UnityNuget.Shared",
+        "UnityNuget.Unity.Dependencies"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
